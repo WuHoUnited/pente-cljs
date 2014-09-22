@@ -12,8 +12,19 @@
 
   :source-paths ["src"]
 
+
+  :profiles {:dev {:plugins [[com.keminglabs/cljx "0.4.0"]]}}
+  :cljx {:builds [{:source-paths ["src-cljx"]
+                   :output-path "target/classes"
+                   :rules :clj}
+
+                  {:source-paths ["src-cljx"]
+                   :output-path "target/classes"
+                   :rules :cljs}]}
+  :hooks [cljx.hooks]
+
   :cljsbuild {:builds [{:id "prod"
-                        :source-paths ["src-cljs"]
+                        :source-paths ["src-cljs" "target/classes"]
                         :compiler {
                                    :output-to "public/prod/pente_cljs.js"
                                    :optimizations :advanced
@@ -21,9 +32,9 @@
                                    :preamble ["react/react.min.js"]
                                    :externs ["react/externs/react.js"]}}
                        {:id "dev"
-                        :source-paths ["src-cljs"]
+                        :source-paths ["src-cljs" "target/classes"]
                         :compiler {
                                    :output-to "public/dev/pente_cljs.js"
-                                   :output-dir "out-dev"
+                                   :output-dir "out"
                                    :optimizations :none
                                    :source-map true}}]})

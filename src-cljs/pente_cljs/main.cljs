@@ -1,7 +1,7 @@
 (ns pente-cljs.main
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
-            [pente-cljs.core :as p]
+            [pente.core :as p]
             [clojure.string]
             [sablono.core :as html :refer-macros [html]]))
 
@@ -215,3 +215,6 @@
           [0 3]
           [0 4]
           [8 8]]))
+
+
+

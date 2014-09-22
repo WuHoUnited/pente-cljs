@@ -1,6 +1,4 @@
-(ns pente-cljs.core)
-
-(enable-console-print!)
+(ns pente.core)
 
 ;; Define Constants
 
