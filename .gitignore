@@ -8,3 +8,6 @@ pom.xml
 .lein-repl-history
 .lein-plugins/
 *~
+.nrepl-port
+/public/dev/pente_cljs.js
+/public/prod/pente_cljs.js

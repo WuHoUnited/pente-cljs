@@ -12,7 +12,6 @@
 
   :source-paths ["src"]
 
-
   :profiles {:dev {:plugins [[com.keminglabs/cljx "0.4.0"]]}}
   :cljx {:builds [{:source-paths ["src-cljx"]
                    :output-path "target/classes"
