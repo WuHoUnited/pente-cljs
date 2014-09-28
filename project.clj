@@ -1,6 +1,6 @@
 (defproject pente-cljs "0.1.0-SNAPSHOT"
-  :description "FIXME: write this!"
-  :url "http://example.com/FIXME"
+  :description "Play Pente in a web browser."
+  :url "https://github.com/WuHoUnited/pente-cljs"
 
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-2322"]
