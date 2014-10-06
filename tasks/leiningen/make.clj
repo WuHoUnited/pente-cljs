@@ -1,6 +1,7 @@
 (ns leiningen.make
   "Leiningen task to make a project."
-  (:require [leiningen.cljx :as cljx]
+  (:require [leiningen.clean :as clean]
+            [leiningen.cljx :as cljx]
             [leiningen.cljsbuild :as cljsbuild]))
 
 (defmacro with-audit!
@@ -36,12 +37,14 @@
 (defn once!
   "Handle the once command"
   [project args]
+  (clean/clean project)
   (run-cljx! project "once")
   (apply run-cljsbuild! project "once" args))
 
 (defn auto!
   "Handle the auto command"
   [project args]
+  (clean/clean project)
   ; We have to run cljx first so that cljsbuild has everything it needs
   (run-cljx! project "once")
   (future (run-cljx! project "auto"))
