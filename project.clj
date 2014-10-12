@@ -6,7 +6,8 @@
                  [org.clojure/clojurescript "0.0-2322"]
                  [om "0.7.3"]
                  [sablono "0.2.22"]
-                 [http-kit "2.1.16"]]
+                 [http-kit "2.1.16"]
+                 [prismatic/schema "0.3.0"]]
 
   :plugins [[lein-cljsbuild "1.0.4-SNAPSHOT"]]
 

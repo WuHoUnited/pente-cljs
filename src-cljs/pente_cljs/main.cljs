@@ -1,11 +1,15 @@
 (ns pente-cljs.main
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
+
+            [schema.core :as s :include-macros true]
             [pente.core :as p]
+
             [clojure.string]
             [sablono.core :as html :refer-macros [html]]))
 
 (enable-console-print!)
+#_(s/set-fn-validation! true)
 
 ;; I don't know how to do correct scaling of SVG. Have to look into trying to use viewBox
 (def SVG_HEIGHT "The total height of the SVG image"
@@ -173,7 +177,6 @@
 (defn game-view
   "This displays the entire application including players, board and pieces."
   [app owner]
-  (def app app) ;; THIS IS FOR DEBUGGING
   (reify om/IRender
     (render [_]
             (html [:div
@@ -206,7 +209,7 @@
 
 (print-str @app-state)
 
-#_(reset! app-state
+(reset! app-state
         (reduce
          p/move
          (p/make-game)
@@ -215,6 +218,5 @@
           [0 3]
           [0 4]
           [8 8]]))
-
 
 
